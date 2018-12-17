@@ -1,0 +1,12 @@
+<h1>Borrar Persona</h1>
+<form method="post">{% csrf_token %}
+    Esta seguro que quiero borrar el siguiente contacto ?
+    <br>
+    Nombre: {{object.nombre}}
+    <br>
+    Apellido: {{ object.apellido }}
+    <br>
+    Telefono: {{ object.telefono }}
+    <br>
+    <input type="submit" value="Confirmar" />
+</form>

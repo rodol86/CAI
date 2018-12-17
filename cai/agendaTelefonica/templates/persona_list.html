@@ -1,0 +1,25 @@
+<h1>Listado de Contactos</h1>
+
+<table border="1">
+<thead>
+    <tr>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Telefono</th>
+    </tr>
+</thead>
+<tbody>
+    {% for persona in object_list %}
+    <tr>
+    <td>{{ persona.nombre }}</td>
+    <td>{{ persona.apellido }}</td>
+    <td>{{ persona.telefono }}</td>
+    <td><a href="{% url "persona_view" persona.id %}">Detalle</a></td>
+    <td><a href="{% url "persona_edit" persona.id %}">Modificar</a></td>
+    <td><a href="{% url "persona_delete" persona.id %}">Borrar</a></td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+
+<a href="{% url "persona_new" %}">Agregar</a>
